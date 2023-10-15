@@ -1,4 +1,5 @@
-//Exercises: 6.1
+// Exercises: 6.1 ChoosingOption.java
+// Nguyễn Trọng Khánh Duy - 20210284
 package Lab_01;
 
 import javax.swing.JOptionPane;

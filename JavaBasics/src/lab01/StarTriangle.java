@@ -1,4 +1,5 @@
-//Exercises: 6.3
+// Exercises: 6.3 StarTriangle.java
+// Nguyễn Trọng Khánh Duy - 20210284
 package Lab_01;
 
 import java.util.Scanner;
@@ -22,3 +23,4 @@ public class StarTriangle {
         scanner.close();
 	}
 }
+

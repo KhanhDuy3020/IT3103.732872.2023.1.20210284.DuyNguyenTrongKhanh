@@ -45,30 +45,28 @@ public class SecondDegreeEq {
                 x = -c / b;
                 strNotification += "x = " + formatDecimal(x);
             }
-        }
-
-        if (D < 0 ) {
-            // Nếu delta(D) < 0 phương trình vô nghiệm
-            strNotification += "No solution";
-        } else if (D == 0) {
-            // Nếu D == 0 phương trình có nghiệm duy nhất x = -b/2a;
-            x = -b / (2 * a);
-            strNotification += "x = " + formatDecimal(x) + "\n";
         } else {
-            // Nếu D > 0 phương trình có 2 nghiệm phân biệt
-            // x1 = (b + sqrt(D)) / (2 * a)
-            // x2 = (b - sqrt(D)) / (2 * a)
-            x1 = (b + Math.sqrt(D)) / (2 * a);
-            x2 = (b - Math.sqrt(D)) / (2 * a);
-            strNotification += "x1 = " + formatDecimal(x1) + "\n";
-            strNotification += "x2 = " + formatDecimal(x2) + "\n";
+            if (D < 0 ) {
+                // Nếu delta(D) < 0 phương trình vô nghiệm
+                strNotification += "No solution";
+            } else if (D == 0) {
+                // Nếu D == 0 phương trình có nghiệm duy nhất x = -b/2a;
+                x = -b / (2 * a);
+                strNotification += "x = " + formatDecimal(x) + "\n";
+            } else {
+                // Nếu D > 0 phương trình có 2 nghiệm phân biệt
+                // x1 = (b + sqrt(D)) / (2 * a)
+                // x2 = (b - sqrt(D)) / (2 * a)
+                x1 = (b + Math.sqrt(D)) / (2 * a);
+                x2 = (b - Math.sqrt(D)) / (2 * a);
+                strNotification += "x1 = " + formatDecimal(x1) + "\n";
+                strNotification += "x2 = " + formatDecimal(x2) + "\n";
+            }
         }
-
-
+        
         JOptionPane.showMessageDialog(null, strNotification, "Show solution", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
-
     // Chỉnh lại hiển thị số. Nếu phần thập phân có số 0 thì không hiển thị
     public static String formatDecimal(double number) {
         DecimalFormat decimalFormat = new DecimalFormat("#.########");

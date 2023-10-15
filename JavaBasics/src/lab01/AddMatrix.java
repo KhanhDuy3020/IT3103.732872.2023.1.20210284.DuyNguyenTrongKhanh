@@ -1,4 +1,5 @@
-//Exercises: 6.6
+// Exercises: 6.6 AddMatrix.java
+// Nguyễn Trọng Khánh Duy - 20210284
 package Lab_01;
 import java.util.Scanner;
 

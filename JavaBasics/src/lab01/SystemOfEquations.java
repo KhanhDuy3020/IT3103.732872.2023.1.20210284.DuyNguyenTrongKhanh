@@ -67,11 +67,9 @@ public class SystemOfEquations {
             strNotification += "x1 = " + formatDecimal(x1) + "\n";
             strNotification += "x2 = " + formatDecimal(x2) + "\n";
         }
-
         JOptionPane.showMessageDialog(null, strNotification, "Show solution", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
     }
-
     // Chỉnh lại hiển thị số. Nếu phần thập phân có số 0 thì không hiển thị
     public static String formatDecimal(double number) {
         DecimalFormat decimalFormat = new DecimalFormat("#.########");

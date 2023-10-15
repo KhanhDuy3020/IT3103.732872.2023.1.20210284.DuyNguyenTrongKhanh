@@ -1,4 +1,5 @@
-//Exercises: 6.5
+// Exercises: 6.5 SortArray.java
+// Nguyễn Trọng Khánh Duy - 20210284
 package Lab_01;
 
 import java.util.Scanner;
@@ -6,8 +7,7 @@ import java.util.Scanner;
 public class SortArray {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
-		int sum = 0;
+		int sum = 0; // Khởi tạo tổng = 0
 		
 		// Nhập số phần tử của mảng
 		System.out.print("Size of array: ");
@@ -20,6 +20,13 @@ public class SortArray {
 			array[i] = scanner.nextInt();
 			sum += array[i]; // Tính tổng
 		}
+		
+		System.out.print("Array: ");
+		for (int i = 0; i < size; i++) {
+			// In ra các phần tử mảng
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
 		
 		bubbleSort(array);
 		
@@ -36,8 +43,7 @@ public class SortArray {
 		System.out.println("Average = " + average);
 		
 		scanner.close();
-	}
-	
+	}	
 	// Thuật toán sắp xếp nổi bọt	
 	public static void bubbleSort(int[] array) {
         int n = array.length;
