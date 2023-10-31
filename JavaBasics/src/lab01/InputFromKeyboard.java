@@ -1,6 +1,6 @@
 // Exercises: 6.2 InputFromKeyboard.java
 // Nguyễn Trọng Khánh Duy - 20210284
-package Lab_01;
+package lab01;
 import java.util.Scanner;
 public class InputFromKeyboard {
 	public static void main(String[] args) {

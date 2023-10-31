@@ -1,6 +1,6 @@
 // Exercises: 6.4 DaysOfAMonth.java
 // Nguyễn Trọng Khánh Duy - 20210284
-package Lab_01;
+package lab01;
 
 import java.util.Scanner;
 
