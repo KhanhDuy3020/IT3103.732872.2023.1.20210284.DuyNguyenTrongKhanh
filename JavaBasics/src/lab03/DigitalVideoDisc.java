@@ -1,5 +1,5 @@
 // Nguyễn Trọng Khánh Duy 20210284
-package lab02;
+package lab03;
 
 public class DigitalVideoDisc {
 	private String title;
