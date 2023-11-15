@@ -18,8 +18,8 @@ public class Cart {
 		}
 	}
 
-	// Nguyễn Trọng Khánh Duy 20210284
-	// Function add listDVD
+//	 Nguyễn Trọng Khánh Duy 20210284
+//	 Function add listDVD
 	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
 		int listLength = dvdList.length;
 		if (qtyOrdered + listLength - 1 < MAX_NUMBERS_ORDERED) { // 20210284: Not almost full
@@ -85,4 +85,19 @@ public class Cart {
 			System.out.println("DVD " + i + itemsOrdered[i].toString());
 		}
 	}
+	
+//	 Nguyễn Trọng Khánh Duy 20210284
+	public void print() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+
+        double totalCost = 0; 
+        for (int i = 0; i < qtyOrdered; i++) {
+            totalCost += itemsOrdered[i].getCost();
+            System.out.println(itemsOrdered[i].toString());
+        }
+
+        System.out.println("Total cost: " + totalCost);
+    }
+
 }
