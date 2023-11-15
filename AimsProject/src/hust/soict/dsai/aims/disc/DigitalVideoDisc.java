@@ -1,5 +1,5 @@
 // Nguyễn Trọng Khánh Duy 20210284
-package lab03;
+package hust.soict.dsai.aims.disc;
 
 public class DigitalVideoDisc {
 	private String title;
