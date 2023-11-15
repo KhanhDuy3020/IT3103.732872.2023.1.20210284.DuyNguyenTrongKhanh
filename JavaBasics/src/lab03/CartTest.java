@@ -14,9 +14,18 @@ public class CartTest {
 		DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 		cart.addDigitalVideoDisc(dvd3);
 
-		System.out.println("Dinh Van Luan - 20215083");
 		// Test the print method
 		cart.print();
+
+		// Test searchDVDsById method
+		cart.searchDVDsById(1);
+
+		cart.searchDVDsById(20210284);
+
+		// Test searchDVDsByTitle;
+		cart.searchDVDsByTitle("Star Wars");
+
+		cart.searchDVDsByTitle("Nguyễn Trọng Khánh Duy");
 
 	}
 }

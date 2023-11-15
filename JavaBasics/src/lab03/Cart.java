@@ -85,19 +85,46 @@ public class Cart {
 			System.out.println("DVD " + i + itemsOrdered[i].toString());
 		}
 	}
-	
+
 //	 Nguyễn Trọng Khánh Duy 20210284
 	public void print() {
-        System.out.println("***********************CART***********************");
-        System.out.println("Ordered Items:");
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items:");
 
-        double totalCost = 0; 
-        for (int i = 0; i < qtyOrdered; i++) {
-            totalCost += itemsOrdered[i].getCost();
-            System.out.println(itemsOrdered[i].toString());
-        }
+		double totalCost = 0;
+		for (int i = 0; i < qtyOrdered; i++) {
+			totalCost += itemsOrdered[i].getCost();
+			System.out.println(itemsOrdered[i].toString());
+		}
 
-        System.out.println("Total cost: " + totalCost);
-    }
+		System.out.println("Total cost: " + totalCost);
+	}
+//	 Nguyễn Trọng Khánh Duy 20210284
+	public void searchDVDsById(int id) {
+		boolean check = false;	// Kiểm tra có tồn tại DVD cần tìm không
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].getId() == id) {
+				check = true;	// Có tồn tại => in ra và thoát khỏi vòng lặp
+				System.out.println(itemsOrdered[i].toString());
+				break;
+			}
+		}
+		if (!check) {
+			System.out.println("Not DVDs match for id = " + id);
+		}
+	}
 
+	public void searchDVDsByTitle(String title) {
+		boolean check = false;	// Kiểm tra có tồn tại DVD cần tìm không
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].isMatch(title)) {
+				check = true;	// Có tồn tại => in ra và thoát khỏi vòng lặp
+				System.out.println(itemsOrdered[i].toString());
+				break;
+			}
+		}
+		if (!check) {
+			System.out.println("Not DVDs match! for title = " + title);
+		}
+	}
 }
