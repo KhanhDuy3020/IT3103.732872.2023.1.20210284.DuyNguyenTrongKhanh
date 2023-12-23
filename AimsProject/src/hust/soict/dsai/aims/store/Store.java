@@ -1,54 +1,54 @@
 // Nguyễn Trọng Khánh Duy 20210284
 package hust.soict.dsai.aims.store;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.ArrayList;
+
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
-	public static final int MAX_NUMBERS_OF = 10000;
-	private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[MAX_NUMBERS_OF];
-	private int itemCount;
+	public static final int MAX_NUMBERS_ITEM = 10000;
+	private ArrayList<Media> itemInStore = new ArrayList<Media>();
 
-	public Store() {
-		this.itemCount = 0;
-	}
-
-	public void addDVD(DigitalVideoDisc dvd) {
-		if (itemCount <= MAX_NUMBERS_OF) {
-			itemsInStore[itemCount] = dvd;
-			itemCount++;
+	public void addMedia(Media newMedia) {
+		if (itemInStore.size() == MAX_NUMBERS_ITEM) {
 			System.out.print("Nguyen Trong Khanh Duy - 20210284: ");
-			System.out.println("Add successful");
+			System.out.println("The Store is almost full");
 		} else {
-			System.out.print("Nguyen Trong Khanh Duy - 20210284: ");
-			System.out.println("The store is almost full");
-		}
-	}
-
-	// remove any dvd from itemsOrdered.
-	public void removeDVD(DigitalVideoDisc dvd) {
-		boolean found = false;
-		for (int i = 0; i < itemCount; i++) {
-			if (itemsInStore[i].equals(dvd)) {
-				for (int j = i; j < itemCount - 1; j++) {
-					itemsInStore[j] = itemsInStore[j + 1];
-				}
-				itemCount--;
-				found = true;
-				break; // Stop the loop when the DVD is found and removed
+			if (itemInStore.contains(newMedia)) {
+				System.out.print("Nguyen Trong Khanh Duy - 20210284: ");
+				System.out.println("The disc has been added");
+			} else {
+				itemInStore.add(newMedia);
+				System.out.print("Nguyen Trong Khanh Duy - 20210284: ");
+				System.out.println("Store add successful");
 			}
 		}
-		if (found) {
+	}
+
+	public void addMedia(Media[] mediaList) {
+		for (Media media : mediaList) {
+			addMedia(media);
+			if (itemInStore.size() == MAX_NUMBERS_ITEM)
+				break;
+		}
+	}
+
+	public void removeMedia(Media aMedia) {
+		if (itemInStore.contains(aMedia)) {
+			itemInStore.remove(aMedia);
 			System.out.print("Nguyen Trong Khanh Duy - 20210284: ");
-			System.out.println("Remove successful");
+			System.out.println("Remove successfull");
 		} else {
 			System.out.print("Nguyen Trong Khanh Duy - 20210284: ");
 			System.out.println("The disc has not been added");
 		}
 	}
 
-	public void viewStore() {
-		for (int i = 0; i < itemCount; i++) {
-			System.out.println(itemsInStore[i].toString());
+	public void print() {
+		System.out.println("----------STORE----------");
+		for (Media order : itemInStore) {
+			System.out.println(order.toString());
 		}
+		System.out.println("-------------------------");
 	}
 }
