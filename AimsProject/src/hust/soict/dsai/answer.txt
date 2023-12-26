@@ -1,6 +1,0 @@
-Trả lời câu hỏi phần 3:
-•	After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
-•	After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
-Trong Java, khi ta truyền đối tượng vào một phương thức như một tham số, thì tham số đó sẽ là một tham chiếu đến đối tượng gốc, chứ không phải là một bản sao của đối tượng. Điều này có nghĩa là mọi thay đổi được thực hiện trên đối tượng thông qua tham số sẽ ảnh hưởng trực tiếp đến đối tượng gốc.
-Sau khi gọi hàm swap(jungleDVD, cinderellaDVD), mặc dù hai đối tượng jungleDVD và cinderellaDVD đã được hoán đổi vị trí trong phương thức swap(), nhưng chúng vẫn trỏ tới cùng các đối tượng ban đầu ở bên ngoài. Do đó, các thuộc tính của đối tượng không bị thay đổi.
-Tuy nhiên, sau khi gọi hàm changeTitle(jungleDVD, cinderellaDVD.getTitle()), chúng ta sử dụng phương thức setTitle() để thay đổi title của đối tượng jungleDVD. Điều này dẫn đến việc thực sự thay đổi giá trị của thuộc tính title trong đối tượng jungleDVD, vì chúng ta đang thao tác trực tiếp trên đối tượng đó.

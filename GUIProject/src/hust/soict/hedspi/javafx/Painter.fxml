@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.hedspi.javafx.PainterController">
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <left>
+      <VBox maxHeight="1.7976931348623157E308" prefHeight="464.0" prefWidth="87.0" spacing="8.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="8.0" />
+         </BorderPane.margin>
+         <children>
+            <TitledPane animated="false" prefHeight="113.0" prefWidth="202.0" text="Tools">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="200.0">
+                     <children>
+                        <RadioButton fx:id="penRadioButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Pen">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="abc" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="eraserRadioButton" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" text="Eraser" toggleGroup="$abc" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" prefHeight="30.0" prefWidth="87.0" text="Clear" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
